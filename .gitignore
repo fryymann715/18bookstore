@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules
+18bookstore-backend/node_modules
 
 # testing
 coverage

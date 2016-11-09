@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
-// import HomeLink from './NavBar/HomeLink'
-// import BrowseLink from './NavBar/BrowseLink'
-// import Search from './NavBar/Search'
-// import CartLink from './NavBar/CartLink'
-// import AboutLink from './NavBar/AboutLink'
 import {Link} from 'react-router'
+import Search from './search'
 
 export default class NavBar extends Component {
   render() {
     return (
-      <div className="NavBar">
-        <Link to="home">Home</Link>
-        <Link to="browse">Browse</Link>
-        <Link to="cart">Cart</Link>
-        <Link to="search">Search</Link>
-        <Link to="about">About</Link>
+      <div className="nav-bar">
+        <Link to="home"><button className="btn btn-primary">Home</button></Link>
+        <Link to="browse"><button className="btn btn-primary">Browse</button></Link>
+        <Search />
+        <Link to="cart"><button className="btn btn-primary">Cart</button></Link>
+        <Link to="about"><button className="btn btn-primary">About</button></Link>
+        <Link to="addbook"><button className="btn btn-primary">Add Book</button></Link>
       </div>
     )
   }

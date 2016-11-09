@@ -2,6 +2,6 @@ import React, { Component } from 'react';
 
 export default class Browse extends Component {
   render() {
-    return  <h5>Browse</h5>
+    return  <h3 className="h3">Browse</h3>
   }
 }

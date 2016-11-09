@@ -3,3 +3,28 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+hr {
+  border: solid rgba(101, 0, 0, 0.72) 2px;
+}
+
+.nav-bar {
+  border: solid black 2px;
+  background-color: #3973ac;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  background-color: grey;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}

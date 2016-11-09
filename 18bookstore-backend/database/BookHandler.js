@@ -14,7 +14,7 @@ const BookHandler = {
     const { title, author, price } = request.body
     const book = new Book({ title: title, author: author, price: price })
     book.save()
-    response.status( 200 ).json({ status: 'success', message: 'Added book.' })
+    response.redirect('http://localhost:3000')
   }
 
 }

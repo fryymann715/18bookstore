@@ -15,17 +15,22 @@ export default class GetBook extends Component {
     componentDidMount() {
         console.log('Loading Component, send request to API')
 
-        axios({
-          method: 'get',
-          url: 'http://localhost:3001/books',
-        })
-        .then( result => {
-            const books = result.data.children.map( obj => obj.data )
-            this.setState({ books: books })
-            console.log("Result Data:" + result)
-        })
-        console.log("Results: ")
-        this.setState({ name: "New Name" })
+        const fetchIsHappenning = {
+          method: 'GET', mode: 'cors', headers: new Headers({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          })
+        }
+
+        fetch( 'http://localhost:3001/books', fetchIsHappenning )
+          .then( data => data.json() )
+          .then( data => {
+              //console.log(data.books)
+              const books = data.books.forEach( element => console.log(element))
+              console.log(books)
+            //   this.setState({ books })
+          })
+            this.setState({ name: "New Name" })
 
 
 

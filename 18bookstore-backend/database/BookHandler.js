@@ -5,27 +5,36 @@ const BookHandler = {
 
   add: ( request, response, next ) => {
     const { title, author, price } = request.body
+    console.log(`Creating new book entry: ${title}`)
     const book = new Book({ title: title, author: author, price: price })
     book.save()
+    const currentdate = new Date()
+    console.log(`Book entry saved to database ---- ${currentdate}`)
     response.redirect('http://localhost:3000')
   },
 
   getAll: ( request, response, next ) => {
-    console.log("Inside get all yo")
-    Book.find( {}, ( error, data ) => { console.log( error ) })
+      const currentdate = new Date()
+    console.log(`Getting ALL books from database...`)
+    Book.find( {}, ( error, data ) => { (error) ? console.log( error ) : console.log('Success') })
     .then( data => {
-      response.status( 200 ).json({ books: data, message: 'Hoorah' })
+        console.log(`Retrieved ALL books from database: ${data.length} items ---- ${currentdate}`)
+      response.status( 200 ).json({ status: 'success', books: data, message: 'Hoorah' })
     })
   },
 
   getOne: ( request, response, next ) => {
     const { title } = request.params
-    console.log(title)
-    Book.find({ title: title }, ( error, data ) =>{ console.log( error ) })
-    .then( data => response.status(200).json({ status: 'success', book: data, message: 'Retrieved book.' }))
+    console.log(`Getting book by title: ${title}`)
+    Book.find({ title: title }, ( error, data ) =>{ console.error( error ) })
+    .then( data => response.status(200).json({ status: 'success', data: data, message: 'Retrieved book.' }))
   },
 
   update: ( request, response, next ) => {
+      const { title } = request.params
+      console.log( `Updating book entry with title: ${title}` )
+      //Book.remove({ title: title })
+      //Book.save
 
   },
 
@@ -33,5 +42,6 @@ const BookHandler = {
 
   }
 }
+
 
 module.exports = BookHandler

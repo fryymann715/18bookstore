@@ -10,7 +10,6 @@ export default class NavBar extends Component {
           <Link to="cart"><button className="btn nav-btn">Cart</button></Link>
           <Link to="about"><button className="btn nav-btn">About</button></Link>
           <Link to="addbook"><button className="btn nav-btn">Add Book</button></Link>
-          <Link to="getbook"><button className="btn nav-btn">Get Book</button></Link>
       </div>
     )
   }

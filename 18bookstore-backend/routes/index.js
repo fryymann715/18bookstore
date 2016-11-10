@@ -9,7 +9,7 @@ router.get('/', ( request, response, next ) => {
 
 router.post( '/books', BookHandler.add )
 router.get( '/books', BookHandler.getAll )
-router.get( '/books/:title', BookHandler.getOne )
+router.get( '/books/:id', BookHandler.getOne )
 // router.put( '/books/:title', BookHandler.update )
 // router.delete( '/books/:title', BookHandler.delete )
 

@@ -24,9 +24,9 @@ const BookHandler = {
   },
 
   getOne: ( request, response, next ) => {
-    const { title } = request.params
-    console.log(`Getting book by title: ${title}`)
-    Book.find({ title: title }, ( error, data ) =>{ console.error( error ) })
+    const { id } = request.params
+    console.log(`Getting book by id: ${id}`)
+    Book.find({ _id: id }, ( error, data ) =>{ console.error( error ) })
     .then( data => response.status(200).json({ status: 'success', data: data, message: 'Retrieved book.' }))
   },
 

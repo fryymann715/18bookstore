@@ -1,9 +1,15 @@
 const db = require('./db')
+const Customer = require('./models/CustomerModel')
 
 const CustomerHanlder = {
 
     add: ( request, response, next ) => {
-        const { name } = request.body
+        const { name, email, password } = request.body
+        const customer = new Customer({ name: name, email: email, password: password })
+        customer.save()
+        
+
+        response.status(200).json({ message: name })
 
     },
 

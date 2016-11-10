@@ -13,7 +13,7 @@ router.get( '/books/:id', BookHandler.getOne )
 // router.put( '/books/:title', BookHandler.update )
 // router.delete( '/books/:title', BookHandler.delete )
 
-// router.get( '/customer/', CustomerHandler )
+router.post( '/customers', CustomerHandler.add )
 // router.get( '/customer/', CustomerHandler )
 // router.get( '/customer/', CustomerHandler )
 // router.get( '/customer/', CustomerHandler )

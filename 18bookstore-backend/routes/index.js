@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const BookHandler = require('../database/BookHandler')
-const CustomerHandler = require('../database/CustomerHandler')
+const UserHandler = require('../database/UserHandler')
 
 router.get('/', ( request, response, next ) => {
   response.status( 200 ).json({ status: 'Yesh', message: 'More Shtuff' })
@@ -13,10 +13,10 @@ router.get( '/books/:id', BookHandler.getOne )
 // router.put( '/books/:title', BookHandler.update )
 // router.delete( '/books/:title', BookHandler.delete )
 
-router.post( '/customers', CustomerHandler.add )
-// router.get( '/customer/', CustomerHandler )
-// router.get( '/customer/', CustomerHandler )
-// router.get( '/customer/', CustomerHandler )
-// router.get( '/customer/', CustomerHandler )
+router.post( '/user', UserHandler.add )
+// router.get( '/user/', UserHandler )
+// router.get( '/user/', UserHandler )
+// router.get( '/user/', UserHandler )
+// router.get( '/user/', UserHandler )
 
 module.exports = router

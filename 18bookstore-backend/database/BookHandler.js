@@ -27,7 +27,11 @@ const BookHandler = {
     const { id } = request.params
     console.log(`Getting book by id: ${id}`)
     Book.find({ _id: id }, ( error, data ) =>{ console.error( error ) })
-    .then( data => response.status(200).json({ status: 'success', data: data, message: 'Retrieved book.' }))
+    .then( data => {
+      const currentdate = new Date()
+      console.log(`Retrieved book from database: ${data.length} items ---- ${currentdate}`)
+      response.status(200).json({ status: 'success', data: data, message: 'Retrieved book.' })
+    })
   },
 
   update: ( request, response, next ) => {

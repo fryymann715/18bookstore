@@ -9,6 +9,7 @@ import Home from './components/pages/home'
 import Cart from './components/pages/cart'
 import About from './components/pages/about'
 import Book from './components/Book'
+import Profile from './components/pages/userprofile'
 
 import GetBook from './components/pages/getbook'
 import AddBookForm from './components/addBookForm'
@@ -17,12 +18,13 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home}></IndexRoute>
-      <Route path="home" component={Home}></Route>
-      <Route path="browse" component={GetBook}></Route>
-      <Route path="cart" component={Cart}></Route>
-      <Route path="about" component={About}></Route>
-      <Route path="addbook" component={AddBookForm}></Route>
-      <Route path="/:id" component={Book}></Route>
+      <Route path="/home" component={Home}></Route>
+      <Route path="/browse" component={GetBook}></Route>
+      <Route path="/cart" component={Cart}></Route>
+      <Route path="/about" component={About}></Route>
+      <Route path="/addbook" component={AddBookForm}></Route>
+      <Route path="/userprofile" component={Profile}></Route>
+      <Route path="/books/:id" component={Book}></Route>
 
       </Route>
   </Router>,

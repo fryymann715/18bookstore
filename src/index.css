@@ -25,21 +25,38 @@
 
 .container {
     background-color: rgba(100, 100, 100, 0.62);
+    border: ridge white .2em;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
     width: 60%;
+    height: 400px;
     display: flex;
     justify-content: center;
 }
 
 .about-div {
-    border: groove black 3px;
+    border: groove #3973ac 3px;
     padding: 2em;
     margin: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.book-container {
+  border: groove grey .25em;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 1em;
+
+}
+
+.book-item {
+  font-weight: bolder;
+  padding: .5em;
+  border: groove grey .25em;
 }
 
 * {
@@ -69,6 +86,7 @@ hr {
 
 .row {
     width: 100%;
+    display: flex;
 }
 .col-6{
     width: 100%;

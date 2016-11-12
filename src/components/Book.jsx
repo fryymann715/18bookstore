@@ -40,10 +40,12 @@ export default class Book extends Component {
 
     render() {
         return (
-          <div>
-            <div>{this.state.title}</div>
-            <div>{this.state.author}</div>
-            <div>{this.state.price}</div>
+          <div className="book-container">
+            <div><h2 className="book-item">{this.state.title}</h2></div>
+            <div className="row">
+              <div><h4 className="book-item">{this.state.author}</h4></div>
+            </div>
+            <div className="row">{this.state.price}</div>
           </div>
             )
     }

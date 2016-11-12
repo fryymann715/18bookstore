@@ -33,7 +33,10 @@ export default class GetBook extends Component {
               data.books.forEach( element=> bookTitles.push( element.title) )
 
               for( let i = 0; i<bookIds.length; i++) {
-                  bookLinks.push( <li key={bookIds[i]}><Link to={bookIds[i]}>{bookTitles[i]} </Link></li> )
+
+                const linkpath = `/books/${bookIds[i]}`
+
+                bookLinks.push( <li key={bookIds[i]}><Link to={linkpath}>{bookTitles[i]} </Link></li> )
               }
               this.setState({ bookLinks })
               this.setState({ bookIds })
